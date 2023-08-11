@@ -63,7 +63,7 @@ class FlutterTool {
     await _disposeScope.run((scope) async {
       final process = await _processManager.start(
         [
-          ...['flutter', 'attach'],
+          ...['fvm', 'flutter', 'attach'],
           '--no-version-check',
           '--debug',
           ...['--device-id', deviceId],
@@ -133,7 +133,7 @@ class FlutterTool {
     await _disposeScope.run((scope) async {
       _logger.detail('Logs: waiting for them...');
       final process = await _processManager.start(
-        ['flutter', '--no-version-check', 'logs', '--device-id', deviceId],
+        ['fvm', 'flutter', '--no-version-check', 'logs', '--device-id', deviceId],
         runInShell: true,
       )
         ..disposedBy(scope);

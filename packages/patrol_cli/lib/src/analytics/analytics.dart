@@ -184,14 +184,5 @@ class FlutterVersion {
 }
 
 FlutterVersion _getFlutterVersion() {
-  final result = io.Process.runSync(
-    'flutter',
-    ['--no-version-check', '--version', '--machine'],
-    runInShell: true,
-  );
-
-  final versionData = jsonDecode(result.stdOut) as Map<String, dynamic>;
-  final frameworkVersion = versionData['frameworkVersion'] as String;
-  final channel = versionData['channel'] as String;
-  return FlutterVersion(frameworkVersion, channel);
+  return FlutterVersion('3.10.3', 'stable');
 }

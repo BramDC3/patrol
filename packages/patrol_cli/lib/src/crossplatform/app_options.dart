@@ -22,7 +22,7 @@ class FlutterAppOptions {
   @nonVirtual
   List<String> toFlutterAttachInvocation() {
     final cmd = [
-      ...['flutter', 'attach'],
+      ...['fvm', 'flutter', 'attach'],
       '--no-version-check',
       '--debug',
       ...['--target', target],
@@ -143,7 +143,7 @@ class IOSAppOptions {
   /// runs before xcodebuild and performs configuration.
   List<String> toFlutterBuildInvocation(BuildMode buildMode) {
     final cmd = [
-      ...['flutter', 'build', 'ios'],
+      ...['fvm', 'flutter', 'build', 'ios'],
       '--no-version-check',
       ...[
         '--config-only',

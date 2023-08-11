@@ -123,7 +123,7 @@ class DeviceFinder {
   Future<String> _getCommandOutput() async {
     var flutterKilled = false;
     final process = await _processManager.start(
-      ['flutter', '--no-version-check', 'devices', '--machine'],
+      ['fvm', 'flutter', '--no-version-check', 'devices', '--machine'],
       runInShell: true,
     );
     _disposeScope.addDispose(() async {
